@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using YoungEnterpriseWepApi.Models;
 
 namespace YoungEnterpriseWepApi
 {
@@ -22,6 +24,9 @@ namespace YoungEnterpriseWepApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connection = @"Server=MADSLP;Database=DBYoungEnterPrise;uid=sa;pwd=madsterbation3d;";
+            services.AddDbContext<DBYoungEnterPriseContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
