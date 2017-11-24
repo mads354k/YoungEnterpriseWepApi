@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test Connection Facade</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#createTeam").click(function () {
+                var team = { teamName: "None", track: "Society & Globalization", school: null, participant: false };
+
+                $.ajax({
+                    type: "POST",
+                    data: team,
+                    url: "http://localhost:8419/api/teams"
+                }).then(function (data) {
+                    alert(JSON.stringify(data));
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="createTeam">create team</button>
+        <p>Team parameters</p>
+        <textarea id="addTeamParameters"></textarea>
+    </div>
+    <div>
+        <button id="updateTeam">update team</button>
+        <p>Team parameters</p>
+        <textarea id="updateTeamParameters"></textarea>
+    </div>
+    <div>
+        <button id="getTeam">get team</button>
+        <p>Team Name</p>
+        <textarea id="teamName"></textarea>
+        <p>Team Information</p>
+        <textarea id="teamInformation"></textarea>
+    </div>
+    <div>
+        <button id="getTeamMembers"> get team members</button>
+        <p>Team Members</p>
+        <textarea id="teamMembers"></textarea>
+    </div>
+    <div>
+        <button id="deleteTeam">delete team</button>
+    </div>
+    <div>
+        <button id="createPerson">add person</button>
+        <p>Person parameters</p>
+        <textarea id="addPersonParameters"></textarea>
+    </div>
+    <div>
+        <button id="getPersons">get persons</button>
+        <p>First and last name</p>
+        <textarea id="firstAndLastName"></textarea>
+        <p>Persons</p>
+        <textarea id="persons"></textarea>
+    </div>
+    <div>
+        <button id="updatePerson">update person</button>
+        <p>Person parameters</p>
+        <textarea id="updatePersonParameters"></textarea>
+    </div>
+    <div>
+        <button id="deletePerson">delete person</button>
+        <p>Person Id</p>
+        <textarea id="personId"></textarea>
+    </div>
+    <div>
+        <button id="getPaticipatingTeams">get paticipating teams</button>
+        <p>Participating teams</p>
+        <textarea id="paticipatingTeam"></textarea>
+    </div>
+    <div>
+        <button id="createQuestion">create question</button>
+        <p>Question parameters</p>
+        <textarea id="createQuestionParameters"></textarea>
+    </div>
+    <div>
+        <button id="getQuestion">get question</button>
+        <p>Question Id</p>
+        <textarea id="questionId"></textarea>
+        <p>Question</p>
+        <textarea id="question"></textarea>
+    </div>
+    <div>
+        <button id="deleteQuestion">remove question</button>
+    </div>
+    <div>
+        <button id="updateQuestion">update question</button>
+        <p>Question parameters</p>
+        <textarea id="updateQuestionParameters"></textarea>
+    </div>
+    <div>
+        <button id="createQuestionnaire">create questionnarie</button>
+        <p>Questionnaire parameters</p>
+        <textarea id="createQuestionnarieParameters"></textarea>
+    </div>
+    <div>
+        <button id="getQuestionnarie">get questionnarie</button>
+        <p>Questionnaire Id</p>
+        <textarea id="questionnarieId"></textarea>
+        <p>Questionnaire</p>
+        <textarea id="questionnarie"></textarea>
+    </div>
+    <div>
+        <button id="updateQuestionnarie">update questionnarie</button>
+        <p>Questionnaire parameters</p>
+        <textarea id="updateQuestionnarieParameters"></textarea>
+    </div>
+    <div>
+        <button id="deleteQuestionnarie">remove questionnarie</button>
+    </div>
+</body>
+</html>
