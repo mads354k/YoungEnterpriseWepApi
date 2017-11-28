@@ -4,53 +4,7 @@
     <meta charset="utf-8" />
     <title>Test Connection Facade</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        function createCORSRequest(method, url) {
-            var xhr = new XMLHttpRequest();
-            if ("withCredentials" in xhr) {
-
-                // Check if the XMLHttpRequest object has a "withCredentials" property.
-                // "withCredentials" only exists on XMLHTTPRequest2 objects.
-                xhr.open(method, url, true);
-
-            } else if (typeof XDomainRequest != "undefined") {
-
-                // Otherwise, check if XDomainRequest.
-                // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-                xhr = new XDomainRequest();
-                xhr.open(method, url);
-
-            } else {
-
-                // Otherwise, CORS is not supported by the browser.
-                xhr = null;
-
-            }
-
-            return xhr;
-        }
-
-        $(document).ready(function () {
-            $("#createTeam").click(function () {
-                var team = { teamName: "Random", track: "Society & Globalization", school: "null", participant: false };
-
-                $.ajax({
-                    method: "POST",
-                    url: "http://localhost:8419/api/teams",
-                    dataType: "json",
-                    contentType: "application/json",
-                    xhr: createCORSRequest,
-                    data: JSON.stringify(team),
-                    success: function () {
-                        alert("succ");
-                    },
-                    error: function (data) {
-                        alert(JSON.stringify(data));
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="Scripts/ServerConnectionFacade.js"></script>
 </head>
 <body>
     <div>
@@ -66,7 +20,7 @@
     <div>
         <button id="getTeam">get team</button>
         <p>Team Name</p>
-        <textarea id="teamName"></textarea>
+        <textarea id="tfTeamName"></textarea>
         <p>Team Information</p>
         <textarea id="teamInformation"></textarea>
     </div>
@@ -84,11 +38,11 @@
         <textarea id="addPersonParameters"></textarea>
     </div>
     <div>
-        <button id="getPersons">get persons</button>
-        <p>First and last name</p>
-        <textarea id="firstAndLastName"></textarea>
+        <button id="getPerson">get persons</button>
+        <p>Person Id</p>
+        <textarea id="tfPersonId"></textarea>
         <p>Persons</p>
-        <textarea id="persons"></textarea>
+        <textarea id="person"></textarea>
     </div>
     <div>
         <button id="updatePerson">update person</button>
@@ -113,7 +67,7 @@
     <div>
         <button id="getQuestion">get question</button>
         <p>Question Id</p>
-        <textarea id="questionId"></textarea>
+        <textarea id="tfQuestionId"></textarea>
         <p>Question</p>
         <textarea id="question"></textarea>
     </div>
@@ -126,14 +80,14 @@
         <textarea id="updateQuestionParameters"></textarea>
     </div>
     <div>
-        <button id="createQuestionnaire">create questionnarie</button>
+        <button id="createQuestionnarie">create questionnarie</button>
         <p>Questionnaire parameters</p>
         <textarea id="createQuestionnarieParameters"></textarea>
     </div>
     <div>
         <button id="getQuestionnarie">get questionnarie</button>
         <p>Questionnaire Id</p>
-        <textarea id="questionnarieId"></textarea>
+        <textarea id="tfQuestionnarieId"></textarea>
         <p>Questionnaire</p>
         <textarea id="questionnarie"></textarea>
     </div>
