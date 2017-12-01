@@ -4,44 +4,50 @@
     <meta charset="utf-8" />
     <title>Manage team</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
 </head>
 <body>
 	<div class="container" style="background-color: cornsilk" align="center">
-		<label class="label-info">Change new team name:</label>
-		<textarea class="text-justify" rows="1" cols="15"></textarea>
-		<button class="btn">save changes</button><br/>
-		<br/>
-		<label class="label-info">Change new track:</label>
-		<select>
-			<option value="Trade and Skills">Trade & Skills</option>
-			<option value="Society and Globalization">Society & Globalization</option>
-			<option value="Business and Service">Business & Service</option>
-			<option value="Science and Technology">Science & Technology</option>
-		</select><br/>
-		<br/>
-		<label class="label-info">Change new team members</label><br/>
-		<textarea class="text-justify" rows="3" cols="25"></textarea><br/>
-		<button class="btn">save changes</button><br/>
-		<br/>
-		<button class="btn">Apply for event</button>
+        <div>
+		    <label class="label-info">Change team name</label><br/>
+		    <input class="input-sm" />
+		    <button class="btn-default">save changes</button><br/>
+		    <br/>
+        </div>
+        <div>
+		    <label class="label-info">Change track</label><br/>
+		    <select>
+	    		<option value="Trade and Skills">Trade & Skills</option>
+	    		<option value="Society and Globalization">Society & Globalization</option>
+	    		<option value="Business and Service">Business & Service</option>
+	    		<option value="Science and Technology">Science & Technology</option>
+	    	</select><br/>
+		    <br/>
+        </div>
+        <div>
+            <label class="label-info">Change school</label><br/>
+            <input class="input-sm" />
+        </div>
+        <div>
+	    	<label class="label-info">Change team members</label><br/>
+	    	<textarea class="text-justify" rows="3" cols="25"></textarea><br/>
+	    	<button class="btn-default">save changes</button><br/>
+	    	<br/>
+        </div>
+		<button class="btn-default">Apply for event</button>
 	</div>
 	<br/>
 	<div class="container" style="background-color: cornsilk" align="right">
 		<label class="label-info">Upload report</label><br />
 		<label class="label-info">File:</label>
-		<textarea class="text-justify" rows="1" cols="15" ></textarea>
-		<button class="btn">Browse...</button><br/>
-		<button class="btn">Upload </button>
-		<button class="btn">Read</button>
-		<button class="btn">Overwrite report if it exist</button>
-		<button class="btn">Remove current report</button>
+        <input class="input-sm" />
+		<button class="btn-default">Browse...</button><br/>
+		<button class="btn-default">Upload </button>
+		<button class="btn-default">Read</button>
+		<button class="btn-default">Remove</button>
 	</div>
 </body>
 </html>
