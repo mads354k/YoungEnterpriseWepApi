@@ -7,19 +7,19 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="Scripts/ManageTeamScript.js"></script>
 
 </head>
 <body>
 	<div class="container" style="background-color: cornsilk" align="center">
         <div>
 		    <label class="label-info">Change team name</label><br/>
-		    <input class="input-sm" />
-		    <button class="btn-default">save changes</button><br/>
+		    <input id="tfTeamName" class="input-sm" />
 		    <br/>
         </div>
         <div>
 		    <label class="label-info">Change track</label><br/>
-		    <select>
+		    <select id="cbTrack">
 	    		<option value="Trade and Skills">Trade & Skills</option>
 	    		<option value="Society and Globalization">Society & Globalization</option>
 	    		<option value="Business and Service">Business & Service</option>
@@ -29,15 +29,16 @@
         </div>
         <div>
             <label class="label-info">Change school</label><br/>
-            <input class="input-sm" />
+            <input id="tfSchool" class="input-sm" /><br/>
         </div>
         <div>
 	    	<label class="label-info">Change team members</label><br/>
-	    	<textarea class="text-justify" rows="3" cols="25"></textarea><br/>
-	    	<button class="btn-default">save changes</button><br/>
+	    	<textarea id="taTeamMembers" class="text-justify" rows="3" cols="25"></textarea><br/>
+	    	<button id="bChangeTeam" class="btn-default">Save changes</button><br/>
 	    	<br/>
         </div>
-		<button class="btn-default">Apply for event</button>
+		<button id="bApply" class="btn-default">Apply for event</button>
+        <button id="bCancel" class="btn-default">Cancel Participation</button>
 	</div>
 	<br/>
 	<div class="container" style="background-color: cornsilk" align="right">

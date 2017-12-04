@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
+    <script src="Scripts/ManageQuestionPageScript.js"></script>
 
 </head>
 <body>
@@ -15,31 +15,31 @@
         <div class="container">
             <label class="label">Questions</label><br/>
             <label class="label-info">Question content</label><br/>
-            <textarea class="text-justify" rows="3" cols="50"></textarea><br/>
+            <textarea id="taQuestionContent" class="text-justify" rows="3" cols="50"></textarea><br/>
             <label class="label-info">Track</label><br/>
-            <select>
-                <option value="Trade and Skills">Trade & Skills</option>
-                <option value="Society and Globalization">Society & Globalization</option>
-                <option value="Business and Service">Business & Service</option>
-                <option value="Science and Technology">Science & Technology</option>
+            <select id="cbTrack">
+                <option value="Trade & Skills">Trade & Skills</option>
+                <option value="Society & Globalization">Society & Globalization</option>
+                <option value="Business & Service">Business & Service</option>
+                <option value="Science & Technology">Science & Technology</option>
             </select><br/>
             <label class="label-info">Weight</label><br/>
-            <input class="input-sm" /><br/>
-            <button class="btn-default">Create Question</button>
-            <button class="btn-default">Get Question</button><br/>
-            <button class="btn-default">Update Question</button>
-            <button class="btn-default">Delete Question</button>
+            <input id="tfWeight" class="input-sm" /><br/>
+            <button id="bCreateQuestion" class="btn-default">Create Question</button>
+            <button id="bGetQuestion" class="btn-default">Get Question</button><br/>
+            <button id="bUpdateQuestion" class="btn-default">Update Question</button>
+            <button id="bDeleteQuestion" class="btn-default">Delete Question</button>
         </div>
         <div class="container" style="background-color:cornsilk">
             <label class="label">Questionnaires</label><br/>
-            <button class="btn-lg">Add Current Question</button>
+            <button id="bAddQuestion1" class="btn-lg">Add Current Question</button>
             <label class="label-info">Team Name</label><br/>
-            <button class="btn-lg">Add Current Question</button>
-            <input class="input-sm" /><br />
-            <button class="btn-lg">Add Current Question</button>
-            <button class="btn-default">Add to Team</button><br />
-            <button class="btn-lg">Add Current Question</button>
-            <button class="btn-default">Add to Report</button><br />
+            <button id="bAddQuestion2" class="btn-lg">Add Current Question</button>
+            <input id="tfTeamName" class="input-sm" /><br />
+            <button id="bAddQuestion3" class="btn-lg">Add Current Question</button>
+            <button id="bAddQuestionnarieToTeam" class="btn-default">Add to Team</button><br />
+            <button id="bAddQuestion4" class="btn-lg">Add Current Question</button>
+            <button id="bAddQuestionnarieToReport" class="btn-default">Add to Report</button><br />
         </div>
     </div>
 </body>
