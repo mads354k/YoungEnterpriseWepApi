@@ -139,6 +139,25 @@ $(document).ready(function () {
         });
     });
 
+    $("#bCreateQuestionnarie").click(function () {
+        var questionnarie = { valuation:"0.0"};
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8419/api/questionnaries",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(questionnarie),
+            success: function (data) {
+                alert("Questionnaire created!");
+                activeQuestionnarie = data["questionnarieId"];
+            },
+            error: function (data) {
+                alert(JSON.stringify(data));
+            }
+        });
+    });
+
     $("#bAddQuestionnarieToReport").click(function () {
         
     });
