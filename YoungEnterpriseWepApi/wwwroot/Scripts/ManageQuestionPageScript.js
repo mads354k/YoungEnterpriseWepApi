@@ -100,26 +100,22 @@ $(document).ready(function () {
 
     $("#bAddQuestion1").click(function () {
         addQuestion();
-        $("#bAddQuestion1").text("Question Added");
-        $("#bAddQuestion1").off();
+        $("#bAddQuestion1").hide(true);
     });
 
     $("#bAddQuestion2").click(function () {
         addQuestion();
-        $("#bAddQuestion2").text("Question Added");
-        $("#bAddQuestion2").off();
+        $("#bAddQuestion2").hide(true);
     });
 
     $("#bAddQuestion3").click(function () {
         addQuestion();
-        $("#bAddQuestion3").text("Question Added");
-        $("#bAddQuestion3").off();
+        $("#bAddQuestion3").hide(true);
     });
 
     $("#bAddQuestion4").click(function () {
         addQuestion();
-        $("#bAddQuestion4").text("Question Added");
-        $("#bAddQuestion4").off();
+        $("#bAddQuestion4").hide(true);
     });
 
     $("#bAddQuestionnarieToTeam").click(function () {
