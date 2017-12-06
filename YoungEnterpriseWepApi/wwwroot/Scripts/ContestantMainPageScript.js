@@ -1,5 +1,11 @@
 ﻿var contestant;
 
 $(document).ready(function () {
-    // todo make info pop-up...
+    $("#bCreateTeam").click(function () {
+        window.location = "MakeATeamPage.html";
+    });
+
+    $("#bManageTeam").click(function () {
+        window.location = "ManageTeam.html";
+    });
 });
