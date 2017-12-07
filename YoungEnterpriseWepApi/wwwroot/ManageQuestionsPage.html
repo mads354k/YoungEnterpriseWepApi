@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="Scripts/ManageQuestionPageScript.js"></script>
+    <script src="Scripts/ManageQuestionPageScript.js?n=1"></script>
 
 </head>
 <body>
     <div>
-        <div class="container" style="position:absolute;width:auto" align="left">
+        <div class="container well" style="position:absolute;width:auto" align="left">
             <label class="label">Questions</label><br/>
             <label class="label-info">Question content</label><br/>
             <textarea id="taQuestionContent" class="text-justify" rows="3" cols="50"></textarea><br/>
@@ -24,57 +24,40 @@
                 <option value="Science & Technology">Science & Technology</option>
             </select><br/>
             <label class="label-info">Weight</label><br/>
-            <input id="tfWeight" class="input-sm" /><br/>
-            <button id="bCreateQuestion" class="btn-default">Create Question</button>
-            <button id="bGetQuestion" class="btn-default">Get Question</button><br/>
-            <button id="bUpdateQuestion" class="btn-default">Update Question</button>
-            <button id="bDeleteQuestion" class="btn-default">Delete Question</button>
+            <input id="tfWeight" class="input-sm" /><br/><br />
+            <button id="bCreateQuestion" class="btn btn-default" style="width:180px">Create Question</button>
+            <button id="bGetQuestion" class="btn btn-default" style="width:180px">Get Question</button><br/>
+            <button id="bUpdateQuestion" class="btn btn-default" style="width:180px">Update Question</button>
+            <button id="bDeleteQuestion" class="btn btn-default" style="width:180px">Delete Question</button>
         </div>
         <div class="container" style="position:center;width:auto" align="right">
             <label class="label">Questionnaires</label>
             <br />
-            <button id="bCreateQuestionnarie" class="btn-default">New Questionnaire</button>
+            <button id="bCreateQuestionnarie" class="btn btn-default" style="width:180px">New Questionnaire</button>
             <br />
+            <br />
+            <button id="bAddQuestion1" class="btn btn-success">Add Current Question</button>
             <textarea id="taQuestion1" class="text-justify" rows="3" cols="30" readonly></textarea>
-            <button id="bAddQuestion1" class="btn-lg">Add Current Question</button>
             <br />
+            <button id="bAddQuestion2" class="btn btn-success">Add Current Question</button>
             <textarea id="taQuestion2" class="text-justify" rows="3" cols="30" readonly></textarea>
-            <button id="bAddQuestion2" class="btn-lg">Add Current Question</button>
             <br />
+            <button id="bAddQuestion3" class="btn btn-success">Add Current Question</button>
             <textarea id="taQuestion3" class="text-justify" rows="3" cols="30" readonly></textarea>
-            <button id="bAddQuestion3" class="btn-lg">Add Current Question</button>
             <br />
+            <button id="bAddQuestion4" class="btn btn-success">Add Current Question</button>
             <textarea id="taQuestion4" class="text-justify" rows="3" cols="30" readonly></textarea>
-            <button id="bAddQuestion4" class="btn-lg">Add Current Question</button>
             <br />
             <label class="label-info">Team Name</label>
             <br />
             <input id="tfTeamName" class="input-sm" />
             <br />
-            <button id="bGetQuestionnarie" class="btn-default">Get questionnaire</button>
             <br />
-            <button id="bDeleteQuestionnarie" class="btn-default">Delete questionnaire</button>
+            <button id="bGetQuestionnarie" class="btn btn-default" style="width:180px">Get questionnaire</button>
+            <button id="bDeleteQuestionnarie" class="btn btn-default" style="width:180px">Delete questionnaire</button>
             <br />
-            <button id="bAddQuestionnarieToTeam" class="btn-default">Add to Team</button>
-            <br />
-            <button id="bAddQuestionnarieToReport" class="btn-default">Add to Report</button>
-            <!--
-            <label class="label">Questionnaires</label>
-            <br/>
-            <button id="bCreateQuestionnarie" class="btn-default">New Questionnaire</button>
-            <br/>
-            <label class="label-info">Team Name</label>
-            <button id="bAddQuestion1" class="btn-lg">Add Current Question</button>
-            <br/>
-            <input id="tfTeamName" class="input-sm" />
-            <button id="bAddQuestion2" class="btn-lg">Add Current Question</button>
-            <br />
-            <button id="bAddQuestionnarieToTeam" class="btn-default">Add to Team</button>
-            <button id="bAddQuestion3" class="btn-lg">Add Current Question</button>
-            <br />
-            <button id="bAddQuestionnarieToReport" class="btn-default">Add to Report</button>
-            <button id="bAddQuestion4" class="btn-lg">Add Current Question</button>
-            <br />-->
+            <button id="bAddQuestionnarieToTeam" class="btn btn-default" style="width:180px">Add to Team</button>
+            <button id="bAddQuestionnarieToReport" class="btn btn-default" style="width:180px">Add to Report</button>
         </div>
     </div>
 </body>

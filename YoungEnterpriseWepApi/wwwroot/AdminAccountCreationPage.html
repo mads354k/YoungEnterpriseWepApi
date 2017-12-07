@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="Scripts/AdminAccountCreationScript.js?n=1"></script>
 
 </head>
 <body>
@@ -20,17 +21,33 @@
             <option value="Administrator">Administrator</option>
         </select>
         <br />
+        <label class="label-info">If event-status is judge</label>
+        <select id="cbJudgeTeam">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option>
+            <option value="J">J</option>
+            <option value="K">K</option>
+            <option value="L">L</option>
+        </select>
+        <br/>
         <label class="label-info">Username</label>
-        <input type="text" class="input-sm" />
+        <input id="tfUsername" type="text" class="input-sm" />
         <br />
         <label class="label-info">Password</label>
-        <input type="password" class="input-sm" />
+        <input id="tfPassword" type="password" class="input-sm" />
         <br />
         <label class="label-info">Confirm password</label>
-        <input type="password" class="input-sm" />
+        <input id="tfConfirmPass" type="password" class="input-sm" />
         <br />
-        <button class="btn-default">Cancel</button>
-        <button class="btn-default">Create account</button>
+        <button id="bBack" class="btn btn-default">Back</button>
+        <button id="bCreateAccount" class="btn btn-default">Create account</button>
     </div>
 </body>
 </html>

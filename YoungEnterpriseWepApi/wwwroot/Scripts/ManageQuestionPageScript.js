@@ -58,8 +58,6 @@ $(document).ready(function () {
             }
         });
 
-        activeQuestionId = questionId;
-
         $("#bGetQuestion").text("Get next question");
     });
 
@@ -101,21 +99,25 @@ $(document).ready(function () {
     $("#bAddQuestion1").click(function () {
         addQuestion();
         $("#bAddQuestion1").hide(true);
+        $("#taQuestion1").val($("#taQuestionContent").val());
     });
 
     $("#bAddQuestion2").click(function () {
         addQuestion();
         $("#bAddQuestion2").hide(true);
+        $("#taQuestion2").val($("#taQuestionContent").val());
     });
 
     $("#bAddQuestion3").click(function () {
         addQuestion();
         $("#bAddQuestion3").hide(true);
+        $("#taQuestion3").val($("#taQuestionContent").val());
     });
 
     $("#bAddQuestion4").click(function () {
         addQuestion();
         $("#bAddQuestion4").hide(true);
+        $("#taQuestion4").val($("#taQuestionContent").val());
     });
 
     $("#bAddQuestionnarieToTeam").click(function () {
@@ -147,6 +149,34 @@ $(document).ready(function () {
             success: function (data) {
                 alert("Questionnaire created!");
                 activeQuestionnarie = data["questionnarieId"];
+            },
+            error: function (data) {
+                alert(JSON.stringify(data));
+            }
+        });
+    });
+
+    $("#bGetQuestionnarie").click(function () {
+        var teamName = $("#tfTeamName").val();
+
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8419/api/teamscores",
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                for (var key in data) {
+                    if (key["teamName"] === teamName) {
+                        activeQuestionnarie = key["questionnarieId"];
+                        $.ajax({
+                            method: "GET",
+                            url: "http://localhost:8419/api/Questionnaries/"+escape(activeQuestionnarie),
+                            dataType: "json",
+                            contentType: "application/json",
+                        });
+                        break;
+                    }
+                }
             },
             error: function (data) {
                 alert(JSON.stringify(data));

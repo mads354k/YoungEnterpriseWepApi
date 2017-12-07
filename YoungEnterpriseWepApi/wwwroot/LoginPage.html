@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="Scripts/LoginScript.js"></script>
+    <script src="Scripts/LoginScript.js?n=1"></script>
 
 </head>
 <body>
-    <div class="container" align="center">
-        <label class="label-info">Username</label>
-        <input type="text" class="input-sm" />
-        <br/>
-        <label class="label-info">Password</label>
-        <input type="password" class="input-sm" />
-        <br/>
-        <button class="btn-default">Sign up</button>
-        <button class="btn-default">Login</button>
+    <div class="container well" align="center">
+        <form id="formid">
+            <label class="label-info">Username</label>
+            <input id="tfUsername" type="text" class="input-sm" />
+            <br />
+            <label class="label-info">Password</label>
+            <input id="tfPassword" type="password" class="input-sm" />
+            <div>
+                <button type="submit" id="bLogin" class="btn btn-default">Login</button>
+            </div>
+        </form>
+        <button id="bSignUp" class="btn btn-default">Sign up</button>
     </div>
 </body>
 </html>
