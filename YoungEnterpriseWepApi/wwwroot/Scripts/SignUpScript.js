@@ -2,8 +2,9 @@
     $("#bCancel").click(function () {
         window.location = "LoginPage.html";
     });
+
     $("#bCreateAccount").click(function () {
-        var dummyPerson = { firstName: $("#tfFirstName").val(), lastName: $("#tflastName").val(), mail: $("#tfMail").val()}
+        var contestant = { firstName: $("#tfFirstName").val(), lastName: $("#tfLastName").val(), mail: $("#tfMail").val(), eventStatus:"Contestant" };
         var passWord = $("#tfPassword").val();
         var passCon = $("#tfConfirmPassword").val();
 
@@ -17,7 +18,7 @@
             url: "http://localhost:8419/api/people",
             dataType: "json",
             contentType: "application/json",
-            data: JSON.stringify(dummyPerson),
+            data: JSON.stringify(contestant),
             success: function (data) {
                 var account = { userName: $("#tfUserName").val(), userPassword: passWord, personId: data["personId"] };
 
@@ -40,6 +41,4 @@
             }
         });
     });
-});
-
 });

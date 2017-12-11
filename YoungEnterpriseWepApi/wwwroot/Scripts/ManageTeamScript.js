@@ -1,10 +1,31 @@
-﻿var contestant;
+﻿var teamName;
+
+window.onload = function () {
+    teamName = window.location.hash.substring(1);
+
+    if (teamName != null) {
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8419/api/teams/" + escape(teamName),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#tfTeamName").val(teamName);
+                $("#tfTrack").val(data["track"]);
+                $("#tfSchool").val(data["school"]);
+            },
+            error: function (data) {
+                alert(JSON.stringify(data));
+            }
+        });
+    } else {
+        alert("No team to manage!");
+    }
+};
 
 $(document).ready(function () {
     $("#bChangeTeam").click(function () {
-        var oldTeamName = "Custom";
-
-
+        var oldTeamName = teamName;
 
         var newTeamName = $("#tfTeamName").val();
         var track = $("#tfTrack").val();
@@ -61,9 +82,7 @@ $(document).ready(function () {
     });
 
     $("#bApply").click(function () {
-        var teamName = "Custom";
-
-        var participating = { teamName:teamName, participant:"true" };
+        var participating = { teamName: teamName, track: $("#tfTrack").val(), school: school = $("#tfSchool").val(), participant: "true" };
 
         $.ajax({
             method: "PUT",
@@ -81,9 +100,7 @@ $(document).ready(function () {
     });
 
     $("#bCancel").click(function () {
-        var teamName = "Custom";
-
-        var participating = { teamName: teamName, participant: "false" };
+        var participating = { teamName: teamName, track: $("#tfTrack").val(), school: school = $("#tfSchool").val(), participant: "false" };
 
         $.ajax({
             method: "PUT",

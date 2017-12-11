@@ -15,14 +15,15 @@
             success: function (data) {
                 var user = $("#tfUsername").val();
                 var pass = $("#tfPassword").val();
+                var personIdent;
 
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].userName === user) {
                         if (data[i].userPassword === pass) {
-                            alert(data[i].personId);
+                            personIdent = data[i].personId;
                             $.ajax({
                                 method: "GET",
-                                url: "http://localhost:8419/api/people/" + escape(data[i].personId),
+                                url: "http://localhost:8419/api/people/" + escape(personIdent),
                                 dataType: "json",
                                 contentType: "application/json",
                                 success: function (data) {
@@ -32,7 +33,7 @@
                                     } else if (data["eventStatus"] === "Judge") {
                                         window.location = "JudgeMainPage.html";
                                     } else if (data["eventStatus"] === "Contestant") {
-                                        window.location = "ContestantMainPage.html";
+                                        window.location.href = "ContestantMainPage.html" + "#" + personIdent;
                                     } else if (data["eventStatus"] === "Administrator") {
                                         window.location = "AdminMainPage.html";
                                     }
