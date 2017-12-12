@@ -31,11 +31,11 @@
                                         alert("Username not found!");
                                         return;
                                     } else if (data["eventStatus"] === "Judge") {
-                                        window.location.href = "JudgeMainPage.html" + "#" + data["firstName"];
+                                        window.location.href = "Judge/JudgeMainPage.html" + "#" + data["firstName"];
                                     } else if (data["eventStatus"] === "Contestant") {
-                                        window.location.href = "ContestantMainPage.html" + "#" + personIdent;
+                                        window.location.href = "Contestant/ContestantMainPage.html" + "#" + personIdent;
                                     } else if (data["eventStatus"] === "Administrator") {
-                                        window.location = "AdminMainPage.html";
+                                        window.location = "Admin/AdminMainPage.html";
                                     }
                                 },
                                 error: function (data) {

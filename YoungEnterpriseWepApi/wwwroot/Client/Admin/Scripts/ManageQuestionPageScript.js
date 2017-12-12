@@ -165,14 +165,92 @@ $(document).ready(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                for (var key in data) {
-                    if (key["teamName"] === teamName) {
-                        activeQuestionnarie = key["questionnarieId"];
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].teamName === teamName) {
+                        activeQuestionnarie = data[i].questionnarieId;
                         $.ajax({
                             method: "GET",
-                            url: "http://localhost:8419/api/Questionnaries/"+escape(activeQuestionnarie),
+                            url: "http://localhost:8419/api/questioninformations",
                             dataType: "json",
                             contentType: "application/json",
+                            success: function (data) {
+                                var x = 1;
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].questionnarieId == activeQuestionnarie) {
+                                        switch (x) {
+                                            case 1:
+                                                $.ajax({
+                                                    method: "GET",
+                                                    url: "http://localhost:8419/api/questions/" + escape(data[i].questionId),
+                                                    dataType: "json",
+                                                    contentType: "application/json",
+                                                    success: function (data) {
+                                                        $("#bAddQuestion1").hide(true);
+                                                        $("#taQuestion1").val(data["textDescription"]);
+                                                    },
+                                                    error: function (data) {
+                                                        alert(JSON.stringify(data));
+                                                    }
+                                                });
+                                                x++;
+                                                break;
+                                            case 2:
+                                                $.ajax({
+                                                    method: "GET",
+                                                    url: "http://localhost:8419/api/questions/" + escape(data[i].questionId),
+                                                    dataType: "json",
+                                                    contentType: "application/json",
+                                                    success: function (data) {
+                                                        $("#bAddQuestion2").hide(true);
+                                                        $("#taQuestion2").val(data["textDescription"]);
+                                                    },
+                                                    error: function (data) {
+                                                        alert(JSON.stringify(data));
+                                                    }
+                                                });
+                                                x++;
+                                                break;
+                                            case 3:
+                                                $.ajax({
+                                                    method: "GET",
+                                                    url: "http://localhost:8419/api/questions/" + escape(data[i].questionId),
+                                                    dataType: "json",
+                                                    contentType: "application/json",
+                                                    success: function (data) {
+                                                        $("#bAddQuestion3").hide(true);
+                                                        $("#taQuestion3").val(data["textDescription"]);
+                                                    },
+                                                    error: function (data) {
+                                                        alert(JSON.stringify(data));
+                                                    }
+                                                });
+                                                x++;
+                                                break;
+                                            case 4:
+                                                $.ajax({
+                                                    method: "GET",
+                                                    url: "http://localhost:8419/api/questions/" + escape(data[i].questionId),
+                                                    dataType: "json",
+                                                    contentType: "application/json",
+                                                    success: function (data) {
+                                                        $("#bAddQuestion4").hide(true);
+                                                        $("#taQuestion4").val(data["textDescription"]);
+                                                    },
+                                                    error: function (data) {
+                                                        alert(JSON.stringify(data));
+                                                    }
+                                                });
+                                                x++;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                }
+                            },
+                            error: function (data) {
+                                alert(JSON.stringify(data));
+                            }
                         });
                         break;
                     }

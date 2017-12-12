@@ -1,4 +1,5 @@
 ﻿var judgeTeam;
+var scheduleData;
 var counter = 0;
 
 window.onload = function () {
@@ -10,9 +11,10 @@ window.onload = function () {
         dataType: "json",
         contentType: "application/json",
         success: function (data) {
-            for (var key in data) {
-                if (key["judgeTeam"] === judgeTeam) {
-                    $("#tblSchedule").append("<tr><td>" + key["time"] + "</td><td>" + key["teamName"] + "</td></tr>");
+            scheduleData = data;
+            for (var i = 0; i < data.length;i++) {
+                if (data[i].judgeTeam === judgeTeam) {
+                    $("#tblSchedule").append("<tr><td>" + data[i].time + "</td><td>" + data[i].teamName + "</td></tr>");
                 }
             }
         },
@@ -24,6 +26,6 @@ window.onload = function () {
 
 $(document).ready(function () {
     $("#bEvaluateTeam").click(function () {
-        window.location = "EvaluateTeamPage.html";
+        window.location.href = "EvaluateTeamPage.html" + "#" + scheduleData[counter].teamName;
     });
 });

@@ -59,7 +59,7 @@ window.onload = function () {
 
 $(document).ready(function () {
     $("#bCreateTeam").click(function () {
-        window.location = "MakeATeamPage.html";
+        window.location.href = "MakeATeamPage.html" + "#" + personId;
     });
 
     $("#bManageTeam").click(function () {

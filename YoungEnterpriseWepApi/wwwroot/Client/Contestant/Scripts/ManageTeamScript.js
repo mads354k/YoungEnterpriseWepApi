@@ -11,7 +11,7 @@ window.onload = function () {
             contentType: "application/json",
             success: function (data) {
                 $("#tfTeamName").val(teamName);
-                $("#tfTrack").val(data["track"]);
+                $("#cbTrack").val(data["track"]);
                 $("#tfSchool").val(data["school"]);
             },
             error: function (data) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
         var oldTeamName = teamName;
 
         var newTeamName = $("#tfTeamName").val();
-        var track = $("#tfTrack").val();
+        var track = $("#cbTrack").val();
         var school = $("#tfSchool").val();
         var participating = false;
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
 
     $("#bApply").click(function () {
-        var participating = { teamName: teamName, track: $("#tfTrack").val(), school: school = $("#tfSchool").val(), participant: "true" };
+        var participating = { teamName: teamName, track: $("#cbTrack").val(), school: school = $("#tfSchool").val(), participant: "true" };
 
         $.ajax({
             method: "PUT",
@@ -100,7 +100,7 @@ $(document).ready(function () {
     });
 
     $("#bCancel").click(function () {
-        var participating = { teamName: teamName, track: $("#tfTrack").val(), school: school = $("#tfSchool").val(), participant: "false" };
+        var participating = { teamName: teamName, track: $("#cbTrack").val(), school: school = $("#tfSchool").val(), participant: "false" };
 
         $.ajax({
             method: "PUT",
