@@ -13,32 +13,45 @@
 <body>
     <div class="container">
         <div class="well">
+            <label class="label-info">Time</label>
+            <input type="text" class="input-sm" />
+            <br/>
+            <label class="label-info">Team</label>
+            <input type="text" class="input-sm" />
+            <br/>
+            <label class="label-info">JudgeTeam</label>
+            <select id="cbJudgeTeam">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="J">J</option>
+                <option value="K">K</option>
+                <option value="L">L</option>
+            </select>
+        </div>
+        <button class="btn btn-success">Add to Schedule</button>
+        <br/>
+        <button class="btn btn-danger">Delete Schedule</button>
+        <div class="well">
             <table class="table">
                 <thead>
                     <tr>
                         <th>Time</th>
-                        <th>Teams</th>
+                        <th>Team</th>
+                        <th>JudgeTeam</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>9:40</th>
-                        <th><input type="text" class="input-sm" /></th>
-                    </tr>
-                    <tr>
-                        <th>9:47</th>
-                        <th><input type="text" class="input-sm" /></th>
-                    </tr>
-                    <tr>
-                        <th>9:54</th>
-                        <th><input type="text" class="input-sm" /></th>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
-        <button class="btn btn-success">Update Schedule</button>
-        <br/>
-        <button class="btn btn-danger">Delete Schedule</button>
     </div>
 </body>
 </html>

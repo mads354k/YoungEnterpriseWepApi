@@ -8,6 +8,7 @@ namespace YoungEnterpriseWepApi.Models
         public Questionnarie()
         {
             QuestionInformation = new HashSet<QuestionInformation>();
+            TeamScore = new HashSet<TeamScore>();
         }
 
         public int QuestionnarieId { get; set; }
@@ -16,5 +17,6 @@ namespace YoungEnterpriseWepApi.Models
 
         public Team TeamNameNavigation { get; set; }
         public ICollection<QuestionInformation> QuestionInformation { get; set; }
+        public ICollection<TeamScore> TeamScore { get; set; }
     }
 }

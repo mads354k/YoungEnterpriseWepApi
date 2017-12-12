@@ -9,6 +9,8 @@ namespace YoungEnterpriseWepApi.Models
         {
             Person = new HashSet<Person>();
             Questionnarie = new HashSet<Questionnarie>();
+            TeamScore = new HashSet<TeamScore>();
+            TimeShedule = new HashSet<TimeShedule>();
         }
 
         public string TeamName { get; set; }
@@ -18,5 +20,7 @@ namespace YoungEnterpriseWepApi.Models
 
         public ICollection<Person> Person { get; set; }
         public ICollection<Questionnarie> Questionnarie { get; set; }
+        public ICollection<TeamScore> TeamScore { get; set; }
+        public ICollection<TimeShedule> TimeShedule { get; set; }
     }
 }
