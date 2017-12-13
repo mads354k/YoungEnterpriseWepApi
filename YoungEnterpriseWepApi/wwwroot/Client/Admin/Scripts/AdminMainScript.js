@@ -18,4 +18,8 @@
     $("#bManageTime").click(function () {
         window.location = "ManageTimeSchedulePage.html";
     });
+
+    $("#bGetTeamScores").click(function () {
+        window.location = "GetTeamScoresPage.html";
+    });
 });
