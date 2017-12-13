@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="Scripts/JudgeMainScript.js?n=1"></script>
+    <script src="Scripts/EvaluateTeamScript.js?n=1"></script>
 
 </head>
 <body>
     <div class="container" align="center">
         <label class="label label-info">Team Name: </label>
-        <input readonly class="input-sm" type="text" />
+        <input id="tfTeamName" readonly class="input-sm" type="text" />
         <label class="label label-info">Track: </label>
-        <input readonly class="input-sm" type="text" />
+        <input id="tfTrack" readonly class="input-sm" type="text" />
         <div class="well">
             <table class="table" style="width:auto">
                 <thead>
@@ -26,25 +26,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th><textarea class="text-justify" rows="3" cols="50" readonly></textarea></th>
-                        <th><input type="text" class="input-sm" style="width:30px"/></th>
+                        <th><textarea id="taQuestion1" class="text-justify" rows="3" cols="50" readonly></textarea></th>
+                        <th><input id="tfScore1" type="text" class="input-sm" style="width:30px"/></th>
                     </tr>
                     <tr>
-                        <th><textarea class="text-justify" rows="3" cols="50" readonly></textarea></th>
-                        <th><input type="text" class="input-sm" style="width:30px"/></th>
+                        <th><textarea id="taQuestion2" class="text-justify" rows="3" cols="50" readonly></textarea></th>
+                        <th><input id="tfScore2" type="text" class="input-sm" style="width:30px"/></th>
                     </tr>
                     <tr>
-                        <th><textarea class="text-justify" rows="3" cols="50" readonly></textarea></th>
-                        <th><input type="text" class="input-sm" style="width:30px"/></th>
+                        <th><textarea id="taQuestion3" class="text-justify" rows="3" cols="50" readonly></textarea></th>
+                        <th><input id="tfScore3" type="text" class="input-sm" style="width:30px"/></th>
                     </tr>
                     <tr>
-                        <th><textarea class="text-justify" rows="3" cols="50" readonly></textarea></th>
-                        <th><input type="text" class="input-sm" style="width:30px"/></th>
+                        <th><textarea id="taQuestion4" class="text-justify" rows="3" cols="50" readonly></textarea></th>
+                        <th><input id="tfScore4" type="text" class="input-sm" style="width:30px"/></th>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <button class="btn btn-success">Confirm</button>
+        <button id="bConfirm" class="btn btn-success">Confirm</button>
     </div>
 </body>
 </html>

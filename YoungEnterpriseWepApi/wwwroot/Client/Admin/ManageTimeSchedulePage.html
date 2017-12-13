@@ -14,10 +14,10 @@
     <div class="container">
         <div class="well">
             <label class="label-info">Time</label>
-            <input type="text" class="input-sm" />
+            <input id="tfTime" type="text" class="input-sm" />
             <br/>
             <label class="label-info">Team</label>
-            <input type="text" class="input-sm" />
+            <input id="tfTeam" type="text" class="input-sm" />
             <br/>
             <label class="label-info">JudgeTeam</label>
             <select id="cbJudgeTeam">
@@ -35,9 +35,9 @@
                 <option value="L">L</option>
             </select>
         </div>
-        <button class="btn btn-success">Add to Schedule</button>
+        <button id="bAddSchedule" class="btn btn-success">Add to Schedule</button>
         <br/>
-        <button class="btn btn-danger">Delete Schedule</button>
+        <button id="bResetSchedule" class="btn btn-danger">Delete Schedule</button>
         <div class="well">
             <table id="tblSchedule" class="table">
                 <thead>

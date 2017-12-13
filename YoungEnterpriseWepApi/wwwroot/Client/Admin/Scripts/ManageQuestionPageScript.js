@@ -40,11 +40,11 @@ $(document).ready(function () {
     });
 
     $("#bGetQuestion").click(function () {
-        var questionId = activeQuestionId + 1;
+        activeQuestionId++;
 
         $.ajax({
             method: "GET",
-            url: "http://localhost:8419/api/questions/" + escape(questionId),
+            url: "http://localhost:8419/api/questions/" + escape(activeQuestionId),
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
@@ -121,12 +121,12 @@ $(document).ready(function () {
     });
 
     $("#bAddQuestionnarieToTeam").click(function () {
-        var questionnarie = { questionnarieId: activeQuestionnarie, valuation:"0.0", teamName: $("#tfTeamName").val()};
+        var teamScore = { questionnarieId: activeQuestionnarie, teamName: $("#tfTeamName").val()};
         $.ajax({
-            method: "PUT",
-            url: "http://localhost:8419/api/questionnaries/" + escape(activeQuestionnarie),
+            method: "POST",
+            url: "http://localhost:8419/api/teamscores",
             dataType: "json",
-            data: JSON.stringify(questionnarie),
+            data: JSON.stringify(teamScore),
             contentType: "application/json",
             success: function (data) {
                 alert("Questinnaire Added!");
@@ -148,7 +148,7 @@ $(document).ready(function () {
             data: JSON.stringify(questionnarie),
             success: function (data) {
                 alert("Questionnaire created!");
-                activeQuestionnarie = data["questionnarieId"];
+                activeQuestionnarie = data.questionnarieId;
             },
             error: function (data) {
                 alert(JSON.stringify(data));
